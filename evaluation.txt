@@ -1,0 +1,54 @@
+site guest :
+    accueil vignettes /
+    show d'une vignette /show
+    connexion/register laravel
+site admin :
+    home /admin
+    liste vignettes /admin/vignettes
+    crud vignettes (liens sous chaque vignette read edit delete)
+    créer vignette /admin/vignettes/create
+    edit vignette /admin/vignettes/{id}/edit
+    read vignette /admin/vignettes/{id} :
+        (id,legende,description,image)
+menu en haut de page :
+    guest :
+        accueil
+        connexion
+        register
+    admin :
+        accueil
+        administration
+        deconnexion
+vignette :
+    legende (74 chars)
+    description (texte)
+    url (chaine)
+autre :
+    messages d'erreur pour les champs à remplir (validators)
+    messages de confirmation lors de la création de vignette
+
+niveau plus :
+    ajouter un status (affichable) à chaque vignette modifiable admin
+
+niveau plusplus :
+    ajouter un lien entre l'user et la vignette
+    un user peut créer plusieurs vignettes
+    une vignette n'est à qu'un seul user
+    un utilisateur ne vois que ses vignettes (new page or bouton accueil)
+
+
+conclusion :
+
+site avec authentification
+affichage minimal (désolé)
+on peut créer des vignettes
+fait la distinction @auth
+contient des migrations
+manque les validators (errors ou success)
+manque les seeders et les factories
+pas de clé étrangère ni de relations
+delete inachevé
+manque le read et l'update
+sinon le controller dispose de tout
+voila
+très bon cours sinon :) merci !
