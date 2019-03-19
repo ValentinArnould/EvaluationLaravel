@@ -28,8 +28,9 @@ class VignetteController extends Controller
         return view('admin.vignettes',['vignettes'=>$vignettes]);
     }
 
-    public function read() {
-        
+    public function read($id) {
+        $vignette = Vignette::find($id);
+        return view('admin.vignette',['vignette'=>$vignette]);
     }
 
     /**
@@ -78,9 +79,11 @@ class VignetteController extends Controller
      * @param  \App\Vignette  $vignette
      * @return \Illuminate\Http\Response
      */
-    public function edit(Vignette $vignette)
+    public function edit($id, Vignette $vignette)
     {
         //
+        $vignette = Vignette::find($id);
+        return view('admin.edit',['vignette'=>$vignette]);
     }
 
     /**
@@ -90,9 +93,16 @@ class VignetteController extends Controller
      * @param  \App\Vignette  $vignette
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Vignette $vignette)
+    public function update($id, Request $request)
     {
         //
+        $vignette = Vignette::find($id);
+        $vignette->legende = $request->legende;
+        $vignette->description = $request->description;
+        $vignette->url = $request->url;
+        //$vignette->affichable = $request->affichable;
+        $vignette->save();
+        return redirect('/admin/vignettes');
     }
 
     /**
@@ -101,6 +111,14 @@ class VignetteController extends Controller
      * @param  \App\Vignette  $vignette
      * @return \Illuminate\Http\Response
      */
+
+    public function delete($id)
+    {
+        //
+        $vignette = Vignette::find($id);
+        return view('admin.delete',['vignette'=>$vignette]);
+    }
+
     public function destroy($id)
     {
         //

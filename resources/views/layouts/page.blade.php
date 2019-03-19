@@ -54,8 +54,7 @@
     </table>
     </nav>
     @endauth
-    <div class="page" style="display:flex;align-items:center;
-        justify-content:center;text-align:center">
+    <div class="page">
         @yield('content')
     </div>
     

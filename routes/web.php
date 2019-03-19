@@ -28,7 +28,8 @@ Route::group(['prefix'=>'admin'],function () {
     Route::get('/vignettes/{id}/edit', "VignetteController@edit")->middleware('admin');
     Route::post('/vignettes/{id}/edit', "VignetteController@update")->middleware('admin');
 
-    Route::get('/vignettes/{id}/delete', "VignetteController@destroy")->middleware('admin');
+    Route::get('/vignettes/{id}/delete', "VignetteController@delete")->middleware('admin');
+    Route::post('/vignettes/{id}/delete', "VignetteController@destroy")->middleware('admin');
 
     Route::get('/vignettes/{id}', "VignetteController@read")->middleware('admin');
 

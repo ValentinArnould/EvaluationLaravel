@@ -8,12 +8,10 @@
             <tr>
             @foreach ($vignettes as $vignette)
                 <td>
-                    <img src="{{$vignette->url}}" alt="{{$vignette->legende}}">
-                    <tr>
-                        <td>voir</td>
-                        <td>modifier</td>
-                        <td> <a href="/vignettes/{{$vignette->id}}/delete">supprimer</a></td>
-                    </tr>
+                    <img src="{{$vignette->url}}" alt="{{$vignette->legende}}"  height="400" width="400">
+                    <div style="display:flex;align-items:center;justify-content:space-around;text-align:center;">
+                        <a href="/admin/vignettes/{{$vignette->id}}">voir</a><a href="/admin/vignettes/{{$vignette->id}}/edit">modifier</a><a href="/admin/vignettes/{{$vignette->id}}/delete">supprimer</a>
+                    </div>
                 </td>
             @endforeach
             </tr>
